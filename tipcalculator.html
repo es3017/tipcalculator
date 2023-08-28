@@ -1,0 +1,34 @@
+<!DOCTYPE html> // the console is used for seeing bugs and erros in the code. In this scenario, I use the console to check entering the bill amount, veryifying the input, calculate the final total, and displaying on the webpages. Errors and issues with the code is displayed via the console 
+<html>
+<head>
+    <title>Tip Calculator</title>
+</head>
+<body>
+    <h1>Tip Calculator</h1>
+    
+    <script>
+        function calculateFinalTotal() {
+            var bill = parseFloat(prompt("Enter the bill amount:"));
+            
+            if (isNaN(bill)) {
+                console.log("Invalid input for bill amount.");
+                return;
+            }
+            
+            var taxedBill = bill * 1.07;
+            
+            var tip = taxedBill * 0.15;
+            
+            var finalTotal = taxedBill + tip;
+            
+            console.log("Final total: $" + finalTotal.toFixed(2));
+            
+            var totalResult = document.createElement("p");
+            totalResult.textContent = `Final total: $${finalTotal.toFixed(2)}`;
+            document.body.appendChild(totalResult);
+        }
+        
+        calculateFinalTotal();
+    </script>
+</body>
+</html>
